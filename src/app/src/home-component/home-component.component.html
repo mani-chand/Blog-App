@@ -1,0 +1,9 @@
+<input id="Blog-Name" [(ngModel)]="newBlogName" placeholder="Enter Blog Name" />
+<button (click)="createBlog()" >Add Blog</button>
+<div>
+    <ul>
+        <li *ngFor="let item of Blogs()">
+          {{ item }} <button (click)="deleteBlog(item)" >Delete</button>
+        </li>
+    </ul>
+</div>
