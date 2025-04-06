@@ -6,15 +6,17 @@ import { BlogService } from '../../services/blog.service';
 import { PostsResponse } from '../../Models/Blog.types';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
 @Component({
   selector: 'app-home-component',
   standalone: true,
-  imports: [CommonModule,FormsModule,HeaderComponentComponent,MatCardModule, MatButtonModule],
+  imports: [CommonModule,FormsModule,HeaderComponentComponent,MatCardModule, MatButtonModule,MatInputModule],
   templateUrl: './home-component.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './home-component.component.css'
 })
 export class HomeComponentComponent implements OnInit {
+  searchBlog:string = ''
   Blogs = signal<PostsResponse>({
     posts: [],
     total: 0,
@@ -42,4 +44,15 @@ export class HomeComponentComponent implements OnInit {
     return first50Words + (words.length > 50 ? '...' : ''); // Add '...' if there are more than 50 words
   }
 
+  searchBlogByText(){
+    console.log("this.searchBlog",this.searchBlog)
+    if(this.searchBlog){
+      this.blogService.getPostsBytext(this.searchBlog).subscribe(
+        response => {this.Blogs.set(response);console.log(response,"Edit",this.searchBlog)},
+        error => console.error('Error fetching data', error)
+      );
+    }
+  }
+
+  
 }

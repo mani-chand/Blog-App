@@ -1,5 +1,12 @@
 <app-header-component/>
+<div *ngIf="!Blogs().posts">
+  <p>Loading...</p>
+</div>
 <div>
+  <div class = "search-div">
+    <input matInput [(ngModel)]="searchBlog" placeholder="Search Blog" class="Search"/>
+    <button mat-button (click) = "searchBlogByText()" >Search</button>
+  </div>
   <mat-card class="example-card" appearance="outlined" *ngFor="let post of Blogs().posts" >
     <mat-card-header>
       <mat-card-title>

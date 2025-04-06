@@ -16,4 +16,10 @@ export class BlogService {
     const postURL = `https://dummyjson.com/posts/${id}`
     return this.http.get<Post>(postURL);
   }
+
+  getPostsBytext(text:string|null): Observable<PostsResponse> {
+    const postURL = `https://dummyjson.com/posts/search?q=${text}`
+    return this.http.get<PostsResponse>(postURL);
+  }
+
 }
