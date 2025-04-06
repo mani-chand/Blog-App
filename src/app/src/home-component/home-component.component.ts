@@ -1,11 +1,11 @@
 import { Component,signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Import FormsModule
-
+import {HeaderComponentComponent} from './../header-component/header-component.component'
 @Component({
   selector: 'app-home-component',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,HeaderComponentComponent],
   templateUrl: './home-component.component.html',
   styleUrl: './home-component.component.css'
 })

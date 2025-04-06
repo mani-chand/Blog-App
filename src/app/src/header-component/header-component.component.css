@@ -1,0 +1,31 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    background-color:antiquewhite;
+    padding: 7px;
+}
+.title{
+    font-size: 30px;
+    padding: 0px 3px 0px 0px;
+}
+.right-header-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically center the content */
+    gap: 8px; /* Add space between the buttons */
+}
+
+.left-header-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically center the content */
+    gap: 8px; /* Add space between the buttons */
+}
+
+button {
+    /* Ensure buttons have consistent styling */
+    padding: 4px 8px;
+    font-size: 14px;
+}
