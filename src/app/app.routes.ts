@@ -8,4 +8,8 @@ export const routes: Routes = [{
     path: 'blog',
     loadComponent: () => import('./src/blog-component/blog-component.component').then(m => m.BlogComponentComponent)
   },
+  {
+    path: 'blog/:id',
+    loadComponent: () => import('./src/blog-component/blog-component.component').then(m => m.BlogComponentComponent)
+  },
 ];

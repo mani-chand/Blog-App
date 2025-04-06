@@ -1,10 +1,26 @@
 <app-header-component/>
-<input id="Blog-Name" [(ngModel)]="newBlogName" placeholder="Enter Blog Name" />
-<button (click)="createBlog()" >Add Blog</button>
 <div>
-    <ul>
-        <li *ngFor="let item of Blogs()">
-          {{ item }} <button (click)="deleteBlog(item)" >Delete</button>
-        </li>
-    </ul>
+  <mat-card class="example-card" appearance="outlined" *ngFor="let post of Blogs().posts" >
+    <mat-card-header>
+      <mat-card-title>
+        <a [href]="'/blog/' + post.id">{{ post.title }}</a>
+      </mat-card-title>
+      <mat-card-subtitle>
+        Tags : {{post.tags}}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        User : {{post.userId}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+       {{getFirst50Words(post.body)}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Likes : {{post.reactions.likes}}</button>
+      <button mat-button>Dislikes : {{post.reactions.dislikes}}</button>
+      <button mat-button>views : {{post.views}}</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
