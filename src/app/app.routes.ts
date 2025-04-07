@@ -5,8 +5,8 @@ export const routes: Routes = [{
     loadComponent: () => import('./src/home-component/home-component.component').then(m => m.HomeComponentComponent)
   },
   {
-    path: 'blog',
-    loadComponent: () => import('./src/blog-component/blog-component.component').then(m => m.BlogComponentComponent)
+    path: 'blog/new',
+    loadComponent: () => import('./src/newblog-component/newblog-component.component').then(m => m.NewblogComponentComponent)
   },
   {
     path: 'blog/:id',

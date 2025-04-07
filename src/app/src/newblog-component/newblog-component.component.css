@@ -1,0 +1,22 @@
+.text-area{
+    width: 90%;
+    height: 100px;
+    padding: 30px;
+    margin: 10px;
+}
+.div-create{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.tags{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.label{
+    padding: 10px;
+    margin: 5px;
+}

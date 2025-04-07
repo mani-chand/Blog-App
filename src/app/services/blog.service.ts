@@ -22,4 +22,10 @@ export class BlogService {
     return this.http.get<PostsResponse>(postURL);
   }
 
+  createPosts(blog:Post): Observable<any> {
+    const postURL = `https://dummyjson.com/posts/`
+    return (this.http.post(postURL,JSON.stringify(blog),{
+      headers: { 'Content-Type': 'application/json' }
+    }))};
+
 }

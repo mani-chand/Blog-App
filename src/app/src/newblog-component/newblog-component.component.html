@@ -1,0 +1,20 @@
+<app-header-component/>
+<div>
+    <label class = "label">Title : </label>
+    <div>
+        <input [(ngModel)] = "blogTitle" matInput placeholder="Blog Title" class="tags"/>
+    </div>
+    <label class = "label">Description : </label>
+    <div>
+        <textarea [(ngModel)] = "description" placeholder = "Write something ... " matInput class="text-area"></textarea>
+    </div>
+    <div>
+        <label class = "label">Tags : </label>
+        <div>
+            <input matInput [(ngModel)] = "tags" placeholder="Add tags with comma" class="tags"/>
+        </div>
+    </div>
+    <div class="div-create">
+        <button (click) = "createBlog()" mat-button="filled">Create Blog</button>
+    </div>
+</div>
