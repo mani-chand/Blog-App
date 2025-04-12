@@ -1,4 +1,6 @@
-package main
+package model
+
+import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Reactions struct {
 	Likes    int `json:"likes"`
@@ -6,11 +8,11 @@ type Reactions struct {
 }
 
 type Blog struct {
-	Id        int       `json:"id"`
-	Title     string    `json:"title"`
-	Body      string    `json:"body"`
-	Reactions Reactions `json:"reactions"`
-	Tags      []string  `json:"tags"`
-	Views     int       `json:"views"`
-	UserId    int       `json:"userid"`
+	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
+	Title     string             `json:"title"`
+	Body      string             `json:"body"`
+	Reactions Reactions          `json:"reactions"`
+	Tags      []string           `json:"tags"`
+	Views     int                `json:"views"`
+	UserId    int                `json:"userid"`
 }
