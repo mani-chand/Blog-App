@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {PostsResponse} from './../Models/Blog.types'
 import { Observable } from 'rxjs';
-import {Post} from './../Models/Blog.types'
+import {Post,newPost,PostsResponse} from './../Models/Blog.types'
 @Injectable({
   providedIn: 'root'
 })
@@ -22,8 +21,8 @@ export class BlogService {
     return this.http.get<PostsResponse>(postURL);
   }
 
-  createPosts(blog:Post): Observable<any> {
-    const postURL = `https://dummyjson.com/posts/`
+  createPosts(blog:newPost): Observable<any> {
+    const postURL = `https://dummyjson.com/posts/add`
     return (this.http.post(postURL,JSON.stringify(blog),{
       headers: { 'Content-Type': 'application/json' }
     }))};

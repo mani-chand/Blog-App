@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {BlogService} from './../../services/blog.service'
-import {Post} from './../../Models/Blog.types'
+import {newPost} from './../../Models/Blog.types'
 @Component({
   selector: 'app-newblog-component',
   standalone: true,
@@ -27,8 +27,7 @@ export class NewblogComponentComponent {
     }else{
       newTags = [this.tags]
     }
-    var newBlog:Post = {
-      id:300,
+    var newBlog:newPost = {
       title: this.blogTitle,
       body: this.description,
       tags: newTags,
@@ -39,6 +38,6 @@ export class NewblogComponentComponent {
       views: 0,
       userId: 7,
     }
-    this.blogService.createPosts(newBlog).subscribe(res=>console.log(res))
+    this.blogService.createPosts(newBlog).subscribe(res=>console.log(res,"Result"))
   }
 }
